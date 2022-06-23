@@ -1,0 +1,9 @@
+#Usuário	    Senha           Role
+2rp-guilherme	ZCteAb0TMvQkg   admin
+2rp-rene	    HJndjeSdjeinS	admin	
+2rp-cristiano	fenwmiHDSsnDs	admin
+2rp-kevin	    mDkfekxlDgeFj	user
+2rp-mario	    ikDmklFklmFkI	user
+2rp-lucas	    kNBIVuOygyHUg	user
+2rp-ioram	    UgdbhDYGssgru	user
+2rp-matheus     fheuNDsjdheIS	user

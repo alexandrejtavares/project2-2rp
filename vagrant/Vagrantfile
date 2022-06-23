@@ -1,0 +1,28 @@
+# encoding: utf-8
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+# OS
+VBOX = "centos/7"
+
+VM_NAME = 'teste-zeppelin'
+
+Vagrant.configure("2") do |config|
+    
+    # Config Vagrant box
+    config.vm.box = VBOX
+
+    # Bind port 8888 to vm
+    config.vm.network "forwarded_port", guest: 8888, host: 8888
+
+    # Defines Virtualbox as provider
+    #
+    config.vm.provider "virtualbox" do |v|
+        v.memory = 4096
+        v.cpus = 2
+        v.name = VM_NAME
+    end   
+    
+    config.vm.disk :disk, name: "maindisk", size: "50GB"
+
+end
