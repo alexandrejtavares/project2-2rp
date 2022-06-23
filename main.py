@@ -28,14 +28,32 @@ def vagrant_up() -> bool:
 @logger.catch
 def install_zeppelin():
     '''
-    Try to install Apache Zeppelin in VM.
+    Install Apache Zeppelin in the VM.
     '''
     try:
+        logger.info(f"Instalando o Apache Zeppelin na máquina virtual.")
         ssh_command = "sudo yum install -y zeppelin"
         command = f"vagrant ssh -c '{ssh_command}' "
-        logger.debug(f"Instalando o Apache Zeppelin na máquina virtual. Comando: {command}")
+        logger.info(f"Apache Zeppelin instalado com sucesso.")
     except:    
+        logger.debug(f"Command: {command}")
         logger.error("Erro ao instalar o Apache Zeppelin.")
+
+#----------------------------------------------------------------------
+@logger.catch
+def install_java():
+    '''
+    Install Java in the VM.
+    '''
+    try:
+        logger.info(f"Instalando o Java na máquina virtual.")
+        ssh_command = "sudo yum install -y java"
+        command = f"vagrant ssh -c '{ssh_command}' "
+        logger.info(f"Java instalado com sucesso.")
+    except:    
+        logger.debug(f"Command: {command}")
+        logger.error("Erro ao instalar o Java.")
+
 
 # Get program path
 app_dir = path.dirname(path.realpath(__file__))
@@ -48,6 +66,9 @@ os.chdir(vagrant_path)
 
 # Inicializa a máquina virtual
 vagrant_up()
+
+# Instala o Java
+install_java()
 
 # Instala o Apache Zeppelin
 install_zeppelin()
