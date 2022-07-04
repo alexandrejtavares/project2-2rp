@@ -12,8 +12,8 @@ Vagrant.configure("2") do |config|
     # Config Vagrant box
     config.vm.box = VBOX
 
-    # Bind port 8888 to vm
-    config.vm.network "forwarded_port", guest: 8888, host: 8888
+    # Bind port 8888 to 8080 in the vm
+    config.vm.network "forwarded_port", guest: 8080, host: 8888
 
     # Defines Virtualbox as provider
     #
